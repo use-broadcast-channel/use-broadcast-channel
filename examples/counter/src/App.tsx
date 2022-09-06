@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useBroadcastChannel } from '@use-broadcast-channel/hooks';
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
   const { postMessage } = useBroadcastChannel<number>({
     channelName: 'test-app',
     onMessage: (message) => {

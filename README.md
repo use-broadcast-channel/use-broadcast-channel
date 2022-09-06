@@ -3,7 +3,7 @@
 React hooks for [pubkey/broadcast-channel](https://github.com/pubkey/broadcast-channel)
 
 ```sh
-$ npm i @use-broadcast-channel/hooks
+$ npm i @use-broadcast-channel/hooks broadcast-channel
 ```
 
 ## Usage

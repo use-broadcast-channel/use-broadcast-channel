@@ -2,6 +2,8 @@
   "name": "@use-broadcast-channel/hooks",
   "version": "0.0.0",
   "main": "dist/use-broadcast-channel-hooks.cjs.js",
-  "sideEffect": false,
+  "module": "dist/use-broadcast-channel-hooks.esm.js",
+  "types": "dist/use-broadcast-channel-hooks.cjs.d.ts",
+  "sideEffects": false,
   "license": "MIT"
 }

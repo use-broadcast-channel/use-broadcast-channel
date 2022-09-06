@@ -47,4 +47,4 @@ export default App;
 
 ## Examples
 
-- [counter](./examples/counter)
+- [counter](https://codesandbox.io/s/github/use-broadcast-channel/use-broadcast-channel/tree/main/examples/counter)

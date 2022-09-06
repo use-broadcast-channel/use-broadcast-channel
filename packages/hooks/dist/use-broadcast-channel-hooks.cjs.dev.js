@@ -1,21 +1,25 @@
-import { useRef, useCallback, useEffect } from 'react';
-import { BroadcastChannel } from 'broadcast-channel';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var react = require('react');
+var broadcastChannel = require('broadcast-channel');
 
 function useBroadcastChannel(options) {
-  var broadcastChannelRef = useRef(null);
-  var handlePostMessage = useCallback(function (message) {
+  var broadcastChannelRef = react.useRef(null);
+  var handlePostMessage = react.useCallback(function (message) {
     if (broadcastChannelRef.current) {
       broadcastChannelRef.current.postMessage(message);
     }
   }, []);
-  useEffect(function () {
+  react.useEffect(function () {
     var channelName = options.channelName,
         broadcastChannelOptions = options.broadcastChannelOptions,
         _options$unmountAutoC = options.unmountAutoClose,
         unmountAutoClose = _options$unmountAutoC === void 0 ? true : _options$unmountAutoC,
         onMessage = options.onMessage;
     var mounted = true;
-    var channel = new BroadcastChannel(channelName, broadcastChannelOptions);
+    var channel = new broadcastChannel.BroadcastChannel(channelName, broadcastChannelOptions);
     broadcastChannelRef.current = channel;
 
     var handler = function handler(message) {
@@ -39,4 +43,4 @@ function useBroadcastChannel(options) {
   };
 }
 
-export { useBroadcastChannel };
+exports.useBroadcastChannel = useBroadcastChannel;

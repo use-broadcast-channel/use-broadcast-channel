@@ -1,5 +1,5 @@
 {
-  "name": "@examples/with-react-context",
+  "name": "@examples/counter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@use-broadcast-channel/hooks": "^0.0.0",
+    "bootstrap": "^5.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sass": "^1.54.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

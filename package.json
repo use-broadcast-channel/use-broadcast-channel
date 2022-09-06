@@ -4,7 +4,8 @@
   "license": "MIT",
   "packageManager": "yarn@3.2.3",
   "scripts": {
-    "postinstall": "preconstruct dev"
+    "postinstall": "preconstruct dev",
+    "build": "preconstruct build"
   },
   "dependencies": {
     "@preconstruct/cli": "^2.2.1"

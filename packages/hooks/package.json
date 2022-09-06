@@ -5,5 +5,14 @@
   "module": "dist/use-broadcast-channel-hooks.esm.js",
   "types": "dist/use-broadcast-channel-hooks.cjs.d.ts",
   "sideEffects": false,
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "broadcast-channel": "^4.14.0",
+    "react": "^18.2.0"
+  },
+  "peerDependencies": {
+    "broadcast-channel": "^4",
+    "react": "^16 | ^17 | ^18"
+  }
 }

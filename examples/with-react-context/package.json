@@ -1,5 +1,5 @@
 {
-  "name": "with-react-context",
+  "name": "@examples/with-react-context",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@use-broadcast-channel/hooks": "^0.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

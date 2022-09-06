@@ -1,6 +1,6 @@
 # useBroadcastChannel
 
-React hooks for pubkey/broadcast-channel
+React hooks for [pubkey/broadcast-channel](https://github.com/pubkey/broadcast-channel)
 
 ```sh
 $ npm i @use-broadcast-channel/hooks

@@ -21,6 +21,6 @@
   },
   "peerDependencies": {
     "broadcast-channel": "^4",
-    "react": "*"
+    "react": "^16 || ^17 || ^18"
   }
 }

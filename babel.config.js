@@ -1,10 +1,6 @@
 module.exports = function (api) {
-  api.cache(true);
+  api.cache(true)
   return {
-    presets: [
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "@babel/preset-typescript",
-    ],
-  };
-};
+    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+  }
+}

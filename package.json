@@ -5,10 +5,9 @@
   "packageManager": "yarn@3.2.3",
   "scripts": {
     "postinstall": "preconstruct dev",
-    "build": "preconstruct build"
-  },
-  "dependencies": {
-    "@preconstruct/cli": "^2.2.1"
+    "build": "preconstruct build",
+    "changesets": "changesets",
+    "release": "yarn build && changeset publish"
   },
   "preconstruct": {
     "packages": [
@@ -26,6 +25,9 @@
     "@babel/preset-env": "^7.19.0",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@changesets/changelog-github": "^0.4.6",
+    "@changesets/cli": "^2.24.4",
+    "@preconstruct/cli": "^2.2.1",
     "prettier": "^2.7.1",
     "typescript": "^4.8.2"
   }

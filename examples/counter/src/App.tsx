@@ -7,7 +7,6 @@ const App = () => {
   const [count, setCount] = useState(0);
   const { postMessage } = useBroadcastChannel<number>({
     channelName: 'test-app',
-    broadcastChannelOptions: { type: 'localstorage' },
     onMessage: (message) => {
       setCount(message);
     },

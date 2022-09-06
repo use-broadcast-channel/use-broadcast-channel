@@ -1,0 +1,7 @@
+{
+  "name": "@use-broadcast-channel/hooks",
+  "version": "0.0.0",
+  "main": "dist/use-broadcast-channel-hooks.cjs.js",
+  "sideEffect": false,
+  "license": "MIT"
+}

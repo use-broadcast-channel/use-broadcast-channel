@@ -6,19 +6,15 @@
   "scripts": {
     "postinstall": "preconstruct dev",
     "build": "preconstruct build",
-    "changesets": "changesets",
+    "changeset": "changeset",
+    "version": "changeset version && yarn --mode=update-lockfile",
     "release": "yarn build && changeset publish"
   },
   "preconstruct": {
-    "packages": [
-      "packages/*"
-    ]
+    "packages": ["packages/*"]
   },
   "workspaces": {
-    "packages": [
-      "examples/*",
-      "packages/*"
-    ]
+    "packages": ["examples/*", "packages/*"]
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",

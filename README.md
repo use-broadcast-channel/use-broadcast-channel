@@ -6,6 +6,10 @@ React hooks for [pubkey/broadcast-channel](https://github.com/pubkey/broadcast-c
 npm i @use-broadcast-channel/hooks broadcast-channel
 ```
 
+## Preview
+
+![dsiTtXln0r](https://user-images.githubusercontent.com/16166356/189964534-3d552b6f-c9f7-477f-8e96-9291ee8a7111.gif)
+
 ## Usage
 
 ```tsx
@@ -47,4 +51,4 @@ export default App;
 
 ## Examples
 
-- [counter](https://codesandbox.io/s/github/use-broadcast-channel/use-broadcast-channel/tree/main/examples/counter)
+- [Counter](https://codesandbox.io/s/github/use-broadcast-channel/use-broadcast-channel/tree/main/examples/counter)

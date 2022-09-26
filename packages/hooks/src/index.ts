@@ -30,10 +30,9 @@ export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
       onMessage(message);
     };
 
-    channel.addEventListener('message', handler);
+    channel.onmessage = handler;
 
     return () => {
-      channel.removeEventListener('message', handler);
       mounted = false;
       broadcastChannelRef.current = null;
       if (unmountAutoClose) {

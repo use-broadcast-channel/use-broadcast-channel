@@ -4,8 +4,6 @@ import { BroadcastChannel, BroadcastChannelOptions } from 'broadcast-channel';
 export interface UseBroadcastChannelOptions<T> {
   channelName: string;
   broadcastChannelOptions?: BroadcastChannelOptions;
-  /** @default true */
-  unmountAutoClose?: boolean;
   onMessage: (message: T) => void;
 }
 
@@ -19,7 +17,7 @@ export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
   }, []);
 
   useEffect(() => {
-    const { channelName, broadcastChannelOptions, unmountAutoClose = true, onMessage } = options;
+    const { channelName, broadcastChannelOptions, onMessage } = options;
 
     let mounted = true;
     const channel = new BroadcastChannel<T>(channelName, broadcastChannelOptions);
@@ -35,9 +33,7 @@ export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
     return () => {
       mounted = false;
       broadcastChannelRef.current = null;
-      if (unmountAutoClose) {
-        channel.close();
-      }
+      channel.close();
     };
   }, [options]);
 

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@use-broadcast-channel/hooks": "^0.0.2",
+    "@use-broadcast-channel/hooks": "^0.0.3",
     "bootstrap": "^5.2.0",
     "broadcast-channel": "^4.14.0",
     "react": "^18.2.0",

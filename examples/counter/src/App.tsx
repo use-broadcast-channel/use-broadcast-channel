@@ -5,11 +5,8 @@ import { useBroadcastChannel } from '@use-broadcast-channel/hooks';
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
-  const { postMessage } = useBroadcastChannel<number>({
-    channelName: 'test-app',
-    onMessage: (message) => {
-      setCount(message);
-    },
+  const { postMessage } = useBroadcastChannel<number>('test-app', (message) => {
+    setCount(message);
   });
 
   const handleClick = () => {

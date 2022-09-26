@@ -4,13 +4,12 @@ import { BroadcastChannel, BroadcastChannelOptions } from 'broadcast-channel';
 export interface UseBroadcastChannelOptions<T> {
   channelName: string;
   broadcastChannelOptions?: BroadcastChannelOptions;
-  /** @default true */
-  unmountAutoClose?: boolean;
   onMessage: (message: T) => void;
 }
 
 export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
   const broadcastChannelRef = useRef<BroadcastChannel<T> | null>(null);
+  const mountedRef = useRef<boolean>(false);
 
   const handlePostMessage = useCallback((message: T) => {
     if (broadcastChannelRef.current && broadcastChannelRef.current.isClosed !== true) {
@@ -18,27 +17,50 @@ export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
     }
   }, []);
 
-  useEffect(() => {
-    const { channelName, broadcastChannelOptions, unmountAutoClose = true, onMessage } = options;
+  const close = () => {
+    if (broadcastChannelRef.current && broadcastChannelRef.current.isClosed !== true) {
+      broadcastChannelRef.current.close();
+    }
+    broadcastChannelRef.current = null;
+  };
 
-    let mounted = true;
-    const channel = new BroadcastChannel<T>(channelName, broadcastChannelOptions);
-    broadcastChannelRef.current = channel;
+  const createChannel = useCallback((options: UseBroadcastChannelOptions<T>) => {
+    const { channelName, broadcastChannelOptions, onMessage } = options;
+    const customIDBOnClose = broadcastChannelOptions?.idb?.onclose;
 
-    const handler = (message: T) => {
-      if (!mounted) return;
+    let channel: BroadcastChannel<T>;
+    channel = new BroadcastChannel<T>(channelName, {
+      ...options,
+      idb: {
+        ...broadcastChannelOptions?.idb,
+        onclose: () => {
+          close();
+          createChannel(options);
+          if (customIDBOnClose) {
+            customIDBOnClose();
+          }
+        },
+      },
+    });
+
+    const handleMessage = (message: T) => {
+      if (!mountedRef.current) {
+        return;
+      }
       onMessage(message);
     };
 
-    channel.addEventListener('message', handler);
+    channel.onmessage = handleMessage;
+    broadcastChannelRef.current = channel;
+  }, []);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    createChannel(options);
 
     return () => {
-      channel.removeEventListener('message', handler);
-      mounted = false;
-      broadcastChannelRef.current = null;
-      if (unmountAutoClose) {
-        channel.close();
-      }
+      mountedRef.current = false;
+      close();
     };
   }, [options]);
 

@@ -13,7 +13,7 @@ export function useBroadcastChannel<T>(options: UseBroadcastChannelOptions<T>) {
   const broadcastChannelRef = useRef<BroadcastChannel<T> | null>(null);
 
   const handlePostMessage = useCallback((message: T) => {
-    if (broadcastChannelRef.current) {
+    if (broadcastChannelRef.current && broadcastChannelRef.current.isClosed !== true) {
       broadcastChannelRef.current.postMessage(message);
     }
   }, []);

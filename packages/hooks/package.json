@@ -16,11 +16,11 @@
   ],
   "devDependencies": {
     "@types/react": "^18.0.18",
-    "broadcast-channel": "^4.14.0",
+    "broadcast-channel": "^5.0.3",
     "react": "^18.2.0"
   },
   "peerDependencies": {
-    "broadcast-channel": "^4",
+    "broadcast-channel": "^5 || ^4",
     "react": "^16 || ^17 || ^18"
   }
 }

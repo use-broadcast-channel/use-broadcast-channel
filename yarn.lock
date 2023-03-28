@@ -1340,7 +1340,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.16.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.2, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:7.21.0":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4":
   version: 7.19.0
   resolution: "@babel/runtime@npm:7.19.0"
   dependencies:
@@ -1661,7 +1670,7 @@ __metadata:
     "@use-broadcast-channel/hooks": ^0.0.3
     "@vitejs/plugin-react": ^2.1.0
     bootstrap: ^5.2.0
-    broadcast-channel: ^4.14.0
+    broadcast-channel: ^5.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
     sass: ^1.54.8
@@ -2064,10 +2073,10 @@ __metadata:
   resolution: "@use-broadcast-channel/hooks@workspace:packages/hooks"
   dependencies:
     "@types/react": ^18.0.18
-    broadcast-channel: ^4.14.0
+    broadcast-channel: ^5.0.3
     react: ^18.2.0
   peerDependencies:
-    broadcast-channel: ^4
+    broadcast-channel: ^5 || ^4
     react: ^16 || ^17 || ^18
   languageName: unknown
   linkType: soft
@@ -2350,18 +2359,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"broadcast-channel@npm:^4.14.0":
-  version: 4.14.0
-  resolution: "broadcast-channel@npm:4.14.0"
+"broadcast-channel@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "broadcast-channel@npm:5.0.3"
   dependencies:
-    "@babel/runtime": ^7.16.0
-    detect-node: ^2.1.0
-    microtime: 3.1.0
+    "@babel/runtime": 7.21.0
     oblivious-set: 1.1.1
     p-queue: 6.6.2
     rimraf: 3.0.2
-    unload: 2.3.1
-  checksum: f197a2412fe5a166fcd540e17c2c48f23e61da36f2408a8d498d037cc30b47ef002bf13323cd0ceb5d1cd2b1d80d28884670d72862be8f86edfce73c7ec5c334
+    unload: 2.4.1
+  checksum: e3d199e2c21152e2d41d66053467a12b20ff21f16e2f830da46d79cffb3840b3ecb0d452d8c977a8c972569500e327d114b56aaadfb2aa87f34f8dc0e9cc244a
   languageName: node
   linkType: hard
 
@@ -2784,13 +2791,6 @@ __metadata:
   version: 6.1.0
   resolution: "detect-indent@npm:6.1.0"
   checksum: ab953a73c72dbd4e8fc68e4ed4bfd92c97eb6c43734af3900add963fd3a9316f3bc0578b018b24198d4c31a358571eff5f0656e81a1f3b9ad5c547d58b2d093d
-  languageName: node
-  linkType: hard
-
-"detect-node@npm:2.1.0, detect-node@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "detect-node@npm:2.1.0"
-  checksum: 832184ec458353e41533ac9c622f16c19f7c02d8b10c303dfd3a756f56be93e903616c0bb2d4226183c9351c15fc0b3dba41a17a2308262afabcfa3776e6ae6e
   languageName: node
   linkType: hard
 
@@ -4280,17 +4280,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"microtime@npm:3.1.0":
-  version: 3.1.0
-  resolution: "microtime@npm:3.1.0"
-  dependencies:
-    node-addon-api: ^5.0.0
-    node-gyp: latest
-    node-gyp-build: ^4.4.0
-  checksum: 3734f7f27b813313687e09590143fcca73e007ec86ffb994c5e25fa60ac763c5fd00560aeb8d406690a9c0b2ae4e8a29adec07c754fc495b04776ca9fb7cda92
-  languageName: node
-  linkType: hard
-
 "min-indent@npm:^1.0.0":
   version: 1.0.1
   resolution: "min-indent@npm:1.0.1"
@@ -4443,15 +4432,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-addon-api@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "node-addon-api@npm:5.0.0"
-  dependencies:
-    node-gyp: latest
-  checksum: 7c5e2043ac37f6108784d94ed73a44ae6d3e68eb968de60680922fc6bc3d17fa69448c0feb4e0c9d3f4c74a0324822e566a8340a56916d9d6f23cb3e85620334
-  languageName: node
-  linkType: hard
-
 "node-fetch@npm:^2.5.0":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
@@ -4463,17 +4443,6 @@ __metadata:
     encoding:
       optional: true
   checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
-  languageName: node
-  linkType: hard
-
-"node-gyp-build@npm:^4.4.0":
-  version: 4.5.0
-  resolution: "node-gyp-build@npm:4.5.0"
-  bin:
-    node-gyp-build: bin.js
-    node-gyp-build-optional: optional.js
-    node-gyp-build-test: build-test.js
-  checksum: d888bae0fb88335f69af1b57a2294a931c5042f36e413d8d364c992c9ebfa0b96ffe773179a5a2c8f04b73856e8634e09cce108dbb9804396d3cc8c5455ff2db
   languageName: node
   linkType: hard
 
@@ -4998,6 +4967,13 @@ __metadata:
   version: 1.4.2
   resolution: "regenerate@npm:1.4.2"
   checksum: 3317a09b2f802da8db09aa276e469b57a6c0dd818347e05b8862959c6193408242f150db5de83c12c3fa99091ad95fb42a6db2c3329bfaa12a0ea4cbbeb30cb0
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
   languageName: node
   linkType: hard
 
@@ -5757,13 +5733,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unload@npm:2.3.1":
-  version: 2.3.1
-  resolution: "unload@npm:2.3.1"
-  dependencies:
-    "@babel/runtime": ^7.6.2
-    detect-node: 2.1.0
-  checksum: b4c3938605afc64839e3010145899e6dade376d2b9da2afe25b88dcf96db89c048acb56b8c641b239cc3ded56dc2f8c526ebf9fa7747831f966a412c11203d79
+"unload@npm:2.4.1":
+  version: 2.4.1
+  resolution: "unload@npm:2.4.1"
+  checksum: a6f92d176e2718af3cb4bf087a338f21f2ded32e81c052d97d020c5b402e4a2925784efd8808827c149d35fddf49dad0a01035ecc6a69941f2c8eae90d33dc12
   languageName: node
   linkType: hard
 

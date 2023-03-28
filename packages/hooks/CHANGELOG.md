@@ -1,5 +1,11 @@
 # @use-broadcast-channel/hooks
 
+## 0.0.4
+
+### Patch Changes
+
+- [#7](https://github.com/use-broadcast-channel/use-broadcast-channel/pull/7) [`6949f21`](https://github.com/use-broadcast-channel/use-broadcast-channel/commit/6949f21b083caa4c30dd64d29ff88a1ef9af145e) Thanks [@nabigraphics](https://github.com/nabigraphics)! - Update broadcast-channel package version 4.14.0 to 5.0.3
+
 ## 0.0.3
 
 ### Patch Changes

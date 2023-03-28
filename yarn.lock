@@ -1667,7 +1667,7 @@ __metadata:
   dependencies:
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
-    "@use-broadcast-channel/hooks": ^0.0.3
+    "@use-broadcast-channel/hooks": ^0.0.4
     "@vitejs/plugin-react": ^2.1.0
     bootstrap: ^5.2.0
     broadcast-channel: ^5.0.3
@@ -2068,7 +2068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@use-broadcast-channel/hooks@^0.0.3, @use-broadcast-channel/hooks@workspace:packages/hooks":
+"@use-broadcast-channel/hooks@^0.0.4, @use-broadcast-channel/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@use-broadcast-channel/hooks@workspace:packages/hooks"
   dependencies:
